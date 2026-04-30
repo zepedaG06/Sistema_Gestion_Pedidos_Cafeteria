@@ -16,7 +16,6 @@ public class Main {
         Cajero cajero = new Cajero();
         Cocina cocina = new Cocina();
 
-        // Flujo del sistema
         Pedido pedido = cliente.realizarPedido();
         cajero.registrarPedido(pedido);
         cajero.enviarPedidoACocina(pedido, cocina);
