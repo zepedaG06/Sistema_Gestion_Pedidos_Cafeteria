@@ -15,10 +15,31 @@ public class Pedido {
         productos.add(p);
     }
 
+    public void eliminarProducto(int index) {
+        if (index >= 0 && index < productos.size()) {
+            productos.remove(index);
+        }
+    }
+
+    public String mostrarProductos() {
+        if (productos.isEmpty()) return "No hay productos";
+
+        String lista = "";
+        for (int i = 0; i < productos.size(); i++) {
+            Producto p = productos.get(i);
+            lista += (i + 1) + ". " +
+                    p.getNombre() +
+                    " | $" + p.getPrecio() +
+                    " | Cant: " + p.getCantidad() +
+                    " | Subtotal: $" + p.getSubtotal() + "\n";
+        }
+        return lista;
+    }
+
     public double calcularTotal() {
         double total = 0;
         for (Producto p : productos) {
-            total += p.getPrecio();
+            total += p.getSubtotal();
         }
         return total;
     }
@@ -31,7 +52,12 @@ public class Pedido {
         return estado;
     }
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
+    public boolean estaVacio() {
+        return productos.isEmpty();
+    }
+
+    public void limpiarPedido() {
+        productos.clear();
+        estado = "Pendiente";
     }
 }
