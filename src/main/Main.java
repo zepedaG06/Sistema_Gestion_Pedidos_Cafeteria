@@ -95,7 +95,6 @@ public class Main {
                             break;
                         }
 
-                        // PROCESO COMPLETO
                         cajero.registrarPedido(pedido);
                         cajero.enviarPedidoACocina(pedido, cocina);
                         cajero.notificarCliente(cliente, pedido);

@@ -30,7 +30,7 @@ public class Pedido {
             lista += (i + 1) + ". " +
                     p.getNombre() +
                     " | $" + p.getPrecio() +
-                    " | Cant: " + p.getCantidad() +
+                    " | Cantidad: " + p.getCantidad() +
                     " | Subtotal: $" + p.getSubtotal() + "\n";
         }
         return lista;
